@@ -8,18 +8,23 @@ class Series {
 		$this->series = $series;
 	}
 
-	function largestProduct($number_count, $product = 0, $temp = 1, $x = 0, $y = 0) {
+	function largestProduct($number_count, $y = 0, $product = 0, $temp = 1) {
 		$arr_series = str_split($this->series);
 
-		for ($i=0; $i<sizeof($arr_series)-1; $i++) {
+		while ($y<sizeof($arr_series)) {
+			for ($x=0; $x<$number_count; $x++) {  
+				$temp *= $arr_series[$y];
+				$y++;
 
-			for ($x=0; $x<$number_count; $x++) { 
-			 	$temp = $arr_series[$i] * $arr_series[$i+$x];
-			 } 
-			// $temp = $arr_series[$i] * $arr_series[$i+1];
+				if ($y>=sizeof($arr_series))
+					break;
+			}
 
-			if ($temp > $product)
+			if ($temp > $product) {
 				$product = $temp;
+			}
+
+			$temp = 1;
 		}
 
 		return $product;
