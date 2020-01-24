@@ -12,6 +12,6 @@ function helloWorld($name = null)
     //
     if (is_null($name))
     	return "Hello, World!";
-    else
-    	return "Hello, ".$name."!";
+
+	return "Hello, ".$name."!";
 }
