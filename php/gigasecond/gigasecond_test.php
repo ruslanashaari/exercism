@@ -22,7 +22,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testDate2()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("1977-06-13");
         $gs = from($date);
 
@@ -31,7 +31,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testPreUnixEpoch()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("1959-7-19");
         $gs = from($date);
 
@@ -40,7 +40,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testDateWithTime1()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("2015-01-24 22:00:00");
         $gs = from($date);
 
@@ -49,7 +49,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testDateWithTime2()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("2015-01-24 23:59:59");
         $gs = from($date);
 
@@ -58,7 +58,7 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
 
     public function testNoMutation()
     {
-        $this->markTestSkipped();
+        // $this->markTestSkipped();
         $date = GigasecondTest::dateSetup("2015-01-24");
         $gs = from($date);
 
@@ -69,10 +69,10 @@ class GigasecondTest extends PHPUnit\Framework\TestCase
     {
         // Replace the string "you_birthday" with your birthday's datestring
 
-        $this->markTestSkipped("Skip");
-        $your_birthday = GigasecondTest::dateSetup("your_birthday");
+        // $this->markTestSkipped("Skip");
+        $your_birthday = GigasecondTest::dateSetup("1995-04-28 23:59:59");
         $gs = from($your_birthday);
 
-        $this->assertSame("2046-10-03 01:46:39", $gs->format("Y-m-d H:i:s"));
+        $this->assertSame("2027-01-05 01:46:39", $gs->format("Y-m-d H:i:s"));
     }
 }
